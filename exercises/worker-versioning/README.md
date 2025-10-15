@@ -47,7 +47,15 @@ the complete version in the `solution` subdirectory.
          DeploymentName      BuildId  DrainageStatus    CreateTime
      worker_versioning_demo  1.0      unspecified     17 seconds ago
    ```
-5. Next, kick off a Workflow by running `python starter.py a100`. You can
+5. Set the current version to this first BuildId using the
+   `temporal worker deployment set-current-version` command, like so:
+
+   ```
+   $ temporal worker deployment set-current-version \
+       --deployment-name "worker_versioning_demo" \
+       --build-id "1.0"
+   ```
+6. Next, kick off a Workflow by running `python starter.py a100`. You can
    check the Temporal Web UI to ensure that it is running normally.
 
 ## Part B: Move a Pinned Workflow to a new Version
