@@ -30,11 +30,10 @@ the complete version in the `solution` subdirectory.
    Workflows handled by this Worker will default to automatically running on
    your newest code revision, or will remain Pinned until being migrated
    manually. For now, set it to `VersioningBehavior.PINNED`.
-3. Start your Worker by running `python worker.py`. You should receive
-   output containing your Build ID:
+3. Start your Worker by running `python worker.py`. You should see the following output.
 
    ```
-   2025/07/22 14:33:23 INFO  Started Worker Namespace default TaskQueue loan-processing-workflow-taskqueue WorkerID 80416@Kavorka.local@ BuildID 1.0
+   INFO:root:Starting the worker....
    ```
 4. In another terminal, run `temporal worker deployment describe --name="worker_versioning_demo"` to get some metadata returned from your running Worker. This should also return your Build ID:
    
